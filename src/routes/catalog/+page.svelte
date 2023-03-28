@@ -6,7 +6,8 @@
 		Avatar,
 		ConicGradient,
 		FileButton,
-		FileDropzone
+		FileDropzone,
+		InputChip
 	} from '@skeletonlabs/skeleton';
 	import type { ConicStop } from '@skeletonlabs/skeleton';
 	import Icon from '@iconify/svelte';
@@ -18,6 +19,7 @@
 	function onChangeHandler(e: Event): void {
 		console.log('file data:', e);
 	}
+	let list: string[] = ['foo', 'bar', 'fizz', 'buzz'];
 </script>
 
 <AppBar>
@@ -49,3 +51,4 @@
 <ConicGradient stops={conicStops} spin>Loading</ConicGradient>
 <FileButton name="file" on:change={onChangeHandler}>Upload</FileButton>
 <FileDropzone name="dropped_file" on:change={onChangeHandler}>Upload</FileDropzone>
+<InputChip bind:value={list} name="chips" placeholder="Enter any value..." />
