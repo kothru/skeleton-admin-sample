@@ -1,8 +1,13 @@
 <script>
-	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+	import { Accordion, AccordionItem, AppBar } from '@skeletonlabs/skeleton';
 	import Icon from '@iconify/svelte';
 </script>
 
+<AppBar>
+	<svelte:fragment slot="lead">lead</svelte:fragment>
+	<svelte:fragment slot="trail">trail</svelte:fragment>
+	<svelte:fragment slot="headline">AppBar</svelte:fragment>
+</AppBar>
 <Accordion>
 	<AccordionItem open>
 		<svelte:fragment slot="lead"><Icon icon="material-symbols:looks-one" /></svelte:fragment>
