@@ -1,6 +1,11 @@
-<script>
-	import { Accordion, AccordionItem, AppBar } from '@skeletonlabs/skeleton';
+<script lang="ts">
+	import { Accordion, AccordionItem, AppBar, Avatar, ConicGradient } from '@skeletonlabs/skeleton';
+	import type { ConicStop } from '@skeletonlabs/skeleton';
 	import Icon from '@iconify/svelte';
+	const conicStops: ConicStop[] = [
+		{ color: 'transparent', start: 0, end: 25 },
+		{ color: 'rgb(var(--color-primary-500))', start: 75, end: 100 }
+	];
 </script>
 
 <AppBar>
@@ -28,3 +33,5 @@
 		>
 	</AccordionItem>
 </Accordion>
+<Avatar initials="JD" background="bg-primary-500" />
+<ConicGradient stops={conicStops} spin>Loading</ConicGradient>
