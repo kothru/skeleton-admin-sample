@@ -1,11 +1,23 @@
 <script lang="ts">
-	import { Accordion, AccordionItem, AppBar, Avatar, ConicGradient } from '@skeletonlabs/skeleton';
+	import {
+		Accordion,
+		AccordionItem,
+		AppBar,
+		Avatar,
+		ConicGradient,
+		FileButton,
+		FileDropzone
+	} from '@skeletonlabs/skeleton';
 	import type { ConicStop } from '@skeletonlabs/skeleton';
 	import Icon from '@iconify/svelte';
 	const conicStops: ConicStop[] = [
 		{ color: 'transparent', start: 0, end: 25 },
 		{ color: 'rgb(var(--color-primary-500))', start: 75, end: 100 }
 	];
+
+	function onChangeHandler(e: Event): void {
+		console.log('file data:', e);
+	}
 </script>
 
 <AppBar>
@@ -35,3 +47,5 @@
 </Accordion>
 <Avatar initials="JD" background="bg-primary-500" />
 <ConicGradient stops={conicStops} spin>Loading</ConicGradient>
+<FileButton name="file" on:change={onChangeHandler}>Upload</FileButton>
+<FileDropzone name="dropped_file" on:change={onChangeHandler}>Upload</FileDropzone>
